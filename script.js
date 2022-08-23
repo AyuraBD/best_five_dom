@@ -3,10 +3,10 @@ function playerElement(elementId){
     const player = document.getElementById(elementId);
     const getPlayer = player.value;
     player.classList.add("selected");
-
+    
     // Click to disabled the button
     document.getElementById(elementId).disabled = true;
-    
+
     // Create element of selected players
     const createElement = document.createElement('li');
     const selectedElement = document.createTextNode(getPlayer);
@@ -16,9 +16,9 @@ function playerElement(elementId){
     const selectedPlayers = document.getElementById('selected-players');
     const countPlayers = selectedPlayers.childNodes;
 
-    // Show an alert if select more than five players
+    // Deny to select more than five players
     if (countPlayers.length > 6 ){
-        alert("You already selected 5 players. Can not select more than five players.");
+        alert("You can not select more than five players.");
     }
 }
 
@@ -47,17 +47,22 @@ document.getElementById('player-six').addEventListener('click', function(){
     playerElement('player-six');
 });
 
-// Budget of selected players
-document.getElementById('player-budget').addEventListener('click', function(){
-    const playerAmount = document.getElementById('player-amount');
+
+function playerAmount(elementId){
+    const playerAmount = document.getElementById(elementId);
     const playerAmountValue = playerAmount.value;
     const playerAmountString = parseInt(playerAmountValue);
-    
     playerAmount.value = '';
-    
-    /// Condition - if input type is not a number
-    if(playerAmountString !== 'number'){
-        alert('Please type a number!');
+    return playerAmountString;
+}
+
+// Budget of selected players
+document.getElementById('player-budget').addEventListener('click', function(){
+    const playerAmountSelect = playerAmount('player-amount');
+    console.log(playerAmountSelect);
+
+    if(playerAmount !== 'number'){
+        alert('Please type a number');
     }
 
     const playerExpenses = document.getElementById('player-expenses');
@@ -75,11 +80,6 @@ document.getElementById('calculate-total').addEventListener('click', function(){
     const managerAmountString = parseInt(managerAmountValue);
     managerAmount.value = ''; 
 
-    // Condition - if input type is not number
-    if(managerAmountString !== 'number'){
-        alert('Please type a number');
-    }
-
     // Coach Expenses
     const coachAmount = document.getElementById('coach');
     const coachAmountValue = coachAmount.value;
@@ -92,7 +92,6 @@ document.getElementById('calculate-total').addEventListener('click', function(){
 
     // Calculate Total Amount
     const claculateTotalExpenses = managerAmountString + coachAmountString + playerExpensesAmountString;
-    playerExpensesAmount.innerText = '0';
 
     const total = document.getElementById('total');
     const totalExpensesElement = total.innerText;
