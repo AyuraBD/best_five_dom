@@ -18,7 +18,7 @@ function playerElement(elementId){
 
     // Deny to select more than five players
     if (countPlayers.length > 6 ){
-        alert("You can not select more than five players.");
+        alert("You already selected 5 players. Can not select more than five players.");
     }
 }
 
