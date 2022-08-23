@@ -52,6 +52,11 @@ document.getElementById('player-budget').addEventListener('click', function(){
     const playerAmountString = parseInt(playerAmountValue);
     playerAmount.value = '';
 
+    // Condition - if input type is not number
+    if(playerAmount !== 'number'){
+        alert('Please type a number');
+    }
+
     const playerExpenses = document.getElementById('player-expenses');
     const playerExpensesElement = playerExpenses.innerText;
     const playerExpensesString = parseInt(playerExpensesElement);
@@ -67,11 +72,21 @@ document.getElementById('calculate-total').addEventListener('click', function(){
     const managerAmountString = parseInt(managerAmountValue);
     managerAmount.value = ''; 
 
+    // Condition - if input type is not number
+    if(managerAmount !== 'number'){
+        alert('Please type a number');
+    }
+
     // Coach Expenses
     const coachAmount = document.getElementById('coach');
     const coachAmountValue = coachAmount.value;
     const coachAmountString = parseInt(coachAmountValue);
     coachAmount.value = '';
+
+    // Condition - if input type is not number
+    if(coachAmount !== 'number'){
+        alert('Please type a number');
+    }
 
     const playerExpensesAmount = document.getElementById('player-expenses');
     const playerExpensesAmountValue = playerExpensesAmount.innerText;
