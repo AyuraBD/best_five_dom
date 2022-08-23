@@ -3,6 +3,9 @@ function playerElement(elementId){
     const player = document.getElementById(elementId);
     const getPlayer = player.value;
     player.classList.add("selected");
+
+    // Click to disabled the button
+    document.getElementById(elementId).disabled = true;
     
     // Create element of selected players
     const createElement = document.createElement('li');
