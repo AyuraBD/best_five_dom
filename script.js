@@ -48,18 +48,12 @@ document.getElementById('player-six').addEventListener('click', function(){
 });
 
 
-function playerAmount(elementId){
-    const playerAmount = document.getElementById(elementId);
+// Budget of selected players
+document.getElementById('player-budget').addEventListener('click', function(){
+    const playerAmount = document.getElementById('player-amount');
     const playerAmountValue = playerAmount.value;
     const playerAmountString = parseInt(playerAmountValue);
     playerAmount.value = '';
-    return playerAmountString;
-}
-
-// Budget of selected players
-document.getElementById('player-budget').addEventListener('click', function(){
-    const playerAmountSelect = playerAmount('player-amount');
-    console.log(playerAmountSelect);
 
     if(playerAmount !== 'number'){
         alert('Please type a number');
