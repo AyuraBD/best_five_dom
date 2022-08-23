@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best five players</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .sidebar ol li{
+      margin-bottom:10px;
+    }
+    .budget div{
+      color:gray;
+      margin-bottom: 10px;
+    }
+    .selected{
+      background-color: gray!important;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-800">
+  <header>
+    <div class="heading mb-20 py-24 px-20 text-center bg-black">
+      <h1 class="text-5xl text-red-600 font-bold">Choose best five players for your team</h1>
+      <p class="text-white semi-bold px-96 mt-6">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
+        officia consequat duis enim velit mollit. Exercitation veniam consequat sunt
+        nostrud amet.
+        </p>
+    </div>
+  </header>
+  <main>
+    <section class="w-9/12 mx-auto">
+        <div id="players" class="grid grid-cols-4 gap-4">
+        <!-- Players -->
+          <div class="player col-span-3">
+            <div class="grid grid-cols-3 gap-4">
+              <!-- player One -->
+              <div class="player one text-center border-2 border-slate-700 bg-black">
+                <img class="w-full" src="img/player1.png" alt="">
+                <div class="player-info p-3">
+                  <h2 id="player-name-one" class="text-2xl mt-2 font-semibold text-white">Lionel Messi</h2>
+                  <div class="player-info mt-3 mb-3 text-gray-400">
+                    <span>36 Goals . 120 Assist</span>
+                  </div>
+                  <button id="player-one" class="uppercase text-white bg-blue-500 px-4 text-center py-2 w-full" value="Lionel Messi">select</button>
+                </div>
+              </div>
+              <!-- Player Two -->
+              <div class="player one text-center border-2 border-slate-700 bg-black">
+                <img class="w-full" src="img/player2.png" alt="">
+                <div class="player-info p-3">
+                  <h2 id="player-name-two" class="text-2xl mt-2 font-semibold text-white">Neymer Jr.</h2>
+                  <div class="player-info mt-3 mb-3 text-gray-400">
+                    <span>36 Goals . 120 Assist</span>
+                  </div>
+                  <button id="player-two" class="uppercase text-white bg-blue-500 px-4 text-center py-2 w-full" value="Neymer Jr.">select</button>
+                </div>
+              </div>
+              <!-- Player Three -->
+              <div class="player one text-center border-2 border-slate-700 bg-black">
+                <img class="w-full" src="img/player5.png" alt="">
+                <div class="player-info p-3">
+                  <h2 id="player-name-three" class="text-2xl mt-2 font-semibold text-white">Kylian Mbappé</h2>
+                  <div class="player-info mt-3 mb-3 text-gray-400">
+                    <span>36 Goals . 120 Assist</span>
+                  </div>
+                  <button id="player-three" class="uppercase text-white bg-blue-500 px-4 text-center py-2 w-full" value="Kylian Mbappé">select</button>
+                </div>
+              </div>
+
+              <!-- Player Four -->
+              <div class="player one text-center border-2 border-slate-700 bg-black">
+                <img class="w-full" src="img/player3.png" alt="">
+                <div class="player-info p-3">
+                  <h2 id="player-name-four" class="text-2xl mt-2 font-semibold text-white">Vítor Machado</h2>
+                  <div class="player-info mt-3 mb-3 text-gray-400">
+                    <span>36 Goals . 120 Assist</span>
+                  </div>
+                  <button id="player-four" class="uppercase text-white bg-blue-500 px-4 text-center py-2 w-full" value="Vítor Machado">select</button>
+                </div>
+              </div>
+
+              <!-- Player Five -->
+              <div class="player one text-center border-2 border-slate-700 bg-black">
+                <img class="w-full" src="img/player4.png" alt="">
+                <div class="player-info p-3">
+                  <h2 class="text-2xl mt-2 font-semibold text-white">Sergio Ramos</h2>
+                  <div id="player-name-five" class="player-info mt-3 mb-3 text-gray-400">
+                    <span>36 Goals . 120 Assist</span>
+                  </div>
+                  <button id="player-five" class="uppercase text-white bg-blue-500 px-4 text-center py-2 w-full" value="Sergio Ramos">select</button>
+                </div>
+              </div>
+
+              <!-- Player Six -->
+              <div class="player one text-center border-2 border-slate-700 bg-black">
+                <img class="w-full" src="img/player4.png" alt="">
+                <div class="player-info p-3">
+                  <h2 id="player-name-six" class="text-2xl mt-2 font-semibold text-white">Renato Sanches</h2>
+                  <div class="player-info mt-3 mb-3 text-gray-400">
+                    <span>36 Goals . 120 Assist</span>
+                  </div>
+                  <button id="player-six" class="uppercase text-white bg-blue-500 px-4 text-center py-2 w-full" value="Renato Sanches">select</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Bar -->
+          <div class="sidebar">
+            <!-- Selected Five -->
+            <div class="selected-five bg-black px-8 py-4 mb-3 text-white">
+              <h3 class="text-2xl text-center font-semibold mb-4">Selected - V</h3>
+              <ol id="selected-players" class="list-decimal">
+                
+              </ol>
+            </div>
+            <!-- Budget -->
+            <div class="budget border-slate-700 bg-black p-6 text-white">
+              <h3 class="text-2xl text-center font-semibold mb-6">Budget</h3>
+              <div class="per-player">
+                <span>Per Player</span><input id="player-amount" type="text" class="px-2 text-white w-2/4 bg-transparent border-white float-right border-2 ml-3">
+                <button id="player-budget" class="uppercase text-white bg-blue-500 px-3 mt-6 text-center py-2 w-full">calculate</button>
+              </div>
+              <div class="player-expenses mt-6">
+                <span>Player Expenses</span> <span class="float-right">$<span id="player-expenses">0</span></span>
+              </div>
+              <div class="manager mt-6">
+                <span>Manager</span> <input id="manager" type="text" class="px-2 text-white w-2/4 bg-transparent border-white float-right border-2 ml-3">
+              </div>
+              <div class="coach mt-6">
+                <span>coach</span> <input id="coach" type="text" class="px-2 text-white w-2/4 bg-transparent border-white float-right border-2 ml-3">
+              </div>
+              <button id="calculate-total" class="uppercase text-white bg-blue-500 px-3 mt-6 text-center py-2 w-full ">calculate total</button>
+              <div class="total mt-8">
+                <span class="font-semibold">Total</span><span class="float-right font-semibold text-red-500">$<span id="total">0</span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-y border-gray-500 mt-20 text-white text-center text-1xl font-semibold py-6">
+    <h1>Copyright &copy; 2022 All Rights Reserved.</h1>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
