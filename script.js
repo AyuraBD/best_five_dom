@@ -16,7 +16,7 @@ function playerElement(elementId){
     const selectedPlayers = document.getElementById('selected-players');
     const countPlayers = selectedPlayers.childNodes;
 
-    // Deny to select more than five players
+    // Show an alert if select more than five players
     if (countPlayers.length > 6 ){
         alert("You already selected 5 players. Can not select more than five players.");
     }
@@ -47,17 +47,17 @@ document.getElementById('player-six').addEventListener('click', function(){
     playerElement('player-six');
 });
 
-
 // Budget of selected players
 document.getElementById('player-budget').addEventListener('click', function(){
     const playerAmount = document.getElementById('player-amount');
     const playerAmountValue = playerAmount.value;
     const playerAmountString = parseInt(playerAmountValue);
+    
     playerAmount.value = '';
-
-    // Condition - if input type is not number
-    if(playerAmount !== 'number'){
-        alert('Please type a number');
+    
+    /// Condition - if input type is not a number
+    if(playerAmountString !== 'number'){
+        alert('Please type a number!');
     }
 
     const playerExpenses = document.getElementById('player-expenses');
@@ -76,7 +76,7 @@ document.getElementById('calculate-total').addEventListener('click', function(){
     managerAmount.value = ''; 
 
     // Condition - if input type is not number
-    if(managerAmount !== 'number'){
+    if(managerAmountString !== 'number'){
         alert('Please type a number');
     }
 
@@ -86,17 +86,13 @@ document.getElementById('calculate-total').addEventListener('click', function(){
     const coachAmountString = parseInt(coachAmountValue);
     coachAmount.value = '';
 
-    // Condition - if input type is not number
-    if(coachAmount !== 'number'){
-        alert('Please type a number');
-    }
-
     const playerExpensesAmount = document.getElementById('player-expenses');
     const playerExpensesAmountValue = playerExpensesAmount.innerText;
     const playerExpensesAmountString = parseInt(playerExpensesAmountValue);
 
     // Calculate Total Amount
     const claculateTotalExpenses = managerAmountString + coachAmountString + playerExpensesAmountString;
+    playerExpensesAmount.innerText = '0';
 
     const total = document.getElementById('total');
     const totalExpensesElement = total.innerText;
